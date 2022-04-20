@@ -125,7 +125,8 @@
 <entry name="GAME_BACKER_NAMES">Backer Credits:</entry>
 <entry name="DESC_BACKER_NAMES">Show names of Kickstarter backers alongside their contributions.</entry>
 <entry name="VIDEO_FRAME_CAP">Frame Rate Cap:</entry>
-<entry name="LANG_EN">Čeština</entry>
+<entry name="LANG_EN">English</entry>
+<entry name="LANG_CS">Čeština</entry>
 <entry name="BRIGHT_INSTRUCT">Adjust brightness to your desired level.</entry>
 <entry name="CTRL_PRESSBUTTON">Press New Button</entry>
 </entries>
