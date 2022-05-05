@@ -100,7 +100,7 @@
 <entry name="GAME_CONTROLLER_RUMBLE">Rumble</entry>
 <entry name="NORMAL_MODE_TEXT">Normal play mode.</entry>
 <entry name="ACHIEVEMENTS_BASE_SET_TITLE">Hollow Knight Achievements</entry>
-<entry name="PROFILE_NEW_GAME">New Game</entry>
+<entry name="PROFILE_NEW_GAME">Nová hra</entry>
 <entry name="DESC_NATIVE_ACHIEVEMENTS">Show in-game messages when earning an achievement.</entry>
 <entry name="KEYBOARD_UNMAPPED">Unmapped</entry>
 <entry name="OPTIONS_CREDITS">Credits</entry>
@@ -126,6 +126,7 @@
 <entry name="DESC_BACKER_NAMES">Show names of Kickstarter backers alongside their contributions.</entry>
 <entry name="VIDEO_FRAME_CAP">Frame Rate Cap:</entry>
 <entry name="LANG_EN">English</entry>
+<entry name="LANG_CS">Čeština</entry>
 <entry name="BRIGHT_INSTRUCT">Adjust brightness to your desired level.</entry>
 <entry name="CTRL_PRESSBUTTON">Press New Button</entry>
 </entries>
