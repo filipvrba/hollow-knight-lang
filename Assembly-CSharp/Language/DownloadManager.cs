@@ -51,7 +51,10 @@ namespace Language
 
         void RestAPIFinish()
         {
-            Language.LoadAvailableLanguages();
+            if ( Language.GetLanguages().Count() < GetSupportedLanguages().Count() )
+            {
+                Language.LoadAvailableLanguages();
+            }
         }
 
         void WriteContents( string[] args )
@@ -89,7 +92,7 @@ namespace Language
 
             if ( File.Exists( pathContent ) )
             {
-                restApi.SetStartContentsCount( restApi.GetStartContentsCount() - 1 );
+                restApi.SetStartContentsCount( -1 );
                 return;
             }
 
@@ -97,9 +100,14 @@ namespace Language
             restApi.StartRequest( pathContent );
         }
 
+        string[] GetSupportedLanguages()
+        {
+            return Enum.GetNames( typeof( GlobalEnums.SupportedLanguages ));
+        }
+
         void LanguageSheets( string[] sheetTitles, Action<string> callback )
         {
-            string[] suppLang = Enum.GetNames( typeof( GlobalEnums.SupportedLanguages ));
+            string[] suppLang = GetSupportedLanguages();
 
             int titlesCount = sheetTitles.Count();
             int suppLangCount = suppLang.Count();

@@ -39,9 +39,9 @@ namespace Language
             return requestCount;
         }
 
-        public void SetStartContentsCount( int count )
+        public void SetStartContentsCount( int count = 1 )
         {
-            startContentsCount = count;
+            startContentsCount += count;
         }
 
         public int GetStartContentsCount()
