@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace Language
         }
 
         const string CLOUD = "https://filipvrba.github.io/hollow-knight-lang/src/bytes/";
+        const string REPOS = "https://api.github.com/repos/filipvrba/hollow-knight-lang/git/trees/37953c96b6e72b0139c5a4c11a08819331bf91d1";
 
         RequestState requestState;
         RestAPI restApi;
@@ -45,6 +47,11 @@ namespace Language
                     WriteContents( args );
                     return;
             }
+        }
+
+        void RestAPIFinish()
+        {
+            Language.LoadAvailableLanguages();
         }
 
         void WriteContents( string[] args )
@@ -82,6 +89,7 @@ namespace Language
 
             if ( File.Exists( pathContent ) )
             {
+                restApi.SetStartContentsCount( restApi.GetStartContentsCount() - 1 );
                 return;
             }
 
@@ -91,9 +99,17 @@ namespace Language
 
         void LanguageSheets( string[] sheetTitles, Action<string> callback )
         {
+            string[] suppLang = Enum.GetNames( typeof( GlobalEnums.SupportedLanguages ));
+
+            int titlesCount = sheetTitles.Count();
+            int suppLangCount = suppLang.Count();
+
+            restApi.Free();
+            restApi.SetStartContentsCount( suppLangCount * titlesCount );
+
             foreach( string sheetTitle in sheetTitles )
             {
-                foreach( string lang in Enum.GetNames( typeof( GlobalEnums.SupportedLanguages )))
+                foreach( string lang in suppLang )
                 {
                     string file = $"{ lang }_{ sheetTitle }{ Local.TYPE_FILE }";
                     callback( file );
