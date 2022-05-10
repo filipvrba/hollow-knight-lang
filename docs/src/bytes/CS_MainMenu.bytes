@@ -28,7 +28,7 @@
 <entry name="SCREEN_AUDIO">Audio</entry>
 <entry name="MAIN_QUIT">Ukončit hru</entry>
 <entry name="BUTTON_PAUSE">Pause Menu</entry>
-<entry name="NAV_YES">Yes</entry>
+<entry name="NAV_YES">Ano</entry>
 <entry name="STEEL_MODE_TEXT">No reviving. Death is permanent.</entry>
 <entry name="MAIN_SWITCH_USER">Switch User</entry>
 <entry name="SCREEN_OPTIONS">Options</entry>
