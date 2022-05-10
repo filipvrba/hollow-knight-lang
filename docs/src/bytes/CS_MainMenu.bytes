@@ -69,7 +69,7 @@
 <entry name="BUTTON_EMPTY">-</entry>
 <entry name="AUDIO_MUSIC_VOL">Music Volume:</entry>
 <entry name="LANG_JA">日本語</entry>
-<entry name="GAME_LANGUAGE">Language:</entry>
+<entry name="GAME_LANGUAGE">Jazyk:</entry>
 <entry name="DESC_VSYNC">Leave on for a smoother experience. Prevents screen tearing.</entry>
 <entry name="OPTIONS_KEYBOARD">Keyboard</entry>
 <entry name="PROFILE_CLEAR_PROMPT">Clear Save?</entry>
