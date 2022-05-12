@@ -40,7 +40,7 @@
 <entry name="DESC_PARTICLES">Reduce to improve performance on lower end machines.</entry>
 <entry name="BUTTON_DASH">Dash</entry>
 <entry name="PROFILE_LOADING">Loading...</entry>
-<entry name="NAV_BACK">Back</entry>
+<entry name="NAV_BACK">Zpátky</entry>
 <entry name="BUTTON_SUPER_DASH">Super Dash</entry>
 <entry name="VIDEO_PARTICLES">Particle Effects:</entry>
 <entry name="BUTTON_JUMP">Jump</entry>
