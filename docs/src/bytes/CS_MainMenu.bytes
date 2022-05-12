@@ -90,7 +90,7 @@
 <entry name="PAUSE_OPTIONS">Options</entry>
 <entry name="VIDEO_DISPLAY">Monitor:</entry>
 <entry name="OS_SLIDER">Scale</entry>
-<entry name="MAIN_START">Start Game</entry>
+<entry name="MAIN_START">Spustit hru</entry>
 <entry name="MODAL_KEEP_RES">Keep New Resolution?</entry>
 <entry name="LANG_KO">한국어</entry>
 <entry name="MODE_NORMAL">Classic</entry>
