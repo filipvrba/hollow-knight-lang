@@ -11,25 +11,35 @@ namespace Language
         enum RequestState
         {
             REPOS,
-            CONTENTS
+            CONTENTS,
+            VERSION
         }
 
         const string CLOUD = "https://filipvrba.github.io/hollow-knight-lang/src/bytes/";
-        const string REPOS = "https://api.github.com/repos/filipvrba/hollow-knight-lang/git/trees/37953c96b6e72b0139c5a4c11a08819331bf91d1";
 
         RequestState requestState;
         RestAPI restApi;
+        Version version;
+
+        bool isLoadLanguages;
 
         public void Awake()
         {
-            requestState = RequestState.REPOS;
+            requestState = RequestState.VERSION;
             restApi = new RestAPI( this );
+            version = new Version( restApi );
+
+            free();
         }
 
         public void Start()
         {
-            string[] sheetTitles = Language.settings.sheetTitles;
-            RestAPIResult( sheetTitles );
+            version.Init();
+        }
+
+        void free()
+        {
+            isLoadLanguages = false;
         }
 
         void RestAPIResult( string[] args )
@@ -46,7 +56,21 @@ namespace Language
 
                     WriteContents( args );
                     return;
+
+                case RequestState.VERSION:
+
+                    version.Verify( args[0], VersionVerifyFinish );
+                    return;
             }
+        }
+
+        void VersionVerifyFinish( bool isLoadLanguages )
+        {
+            this.isLoadLanguages = isLoadLanguages;
+            SwitchRequestState( RequestState.REPOS );
+
+            string[] sheetTitles = Language.settings.sheetTitles;
+            RestAPIResult( sheetTitles );
         }
 
         void RestAPIFinish()
@@ -54,6 +78,12 @@ namespace Language
             if ( Language.GetLanguages().Count() < GetSupportedLanguages().Count() )
             {
                 Language.LoadAvailableLanguages();
+            }
+
+            if ( isLoadLanguages ) {
+
+                free();
+                Language.LoadLanguage();
             }
         }
 

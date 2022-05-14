@@ -28,5 +28,24 @@ namespace Language
             else
                 return absolutePathFile + TYPE_FILE;
         }
+
+        public static string AbsolutePathFolder( string folder )
+        {
+            return Path.Combine( Application.dataPath, folder );
+        }
+
+        public static void RemoveAllFiles()
+        {
+            string absolutePathFolder = AbsolutePathFolder( Language.LANG_DIRECTORY );
+
+            if ( !Directory.Exists( absolutePathFolder ))
+                return;
+
+            string[] files = Directory.GetFiles( absolutePathFolder );
+            foreach ( string file in files )
+            {
+                File.Delete( file );
+            }
+        }
     }
 }
